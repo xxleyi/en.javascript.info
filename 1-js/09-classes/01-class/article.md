@@ -295,9 +295,9 @@ Such features are easy to remember, as they resemble that of literal objects.
 Class fields are a recent addition to the language.
 ```
 
-Previously, our classes only had methods.
+Previously, our classes only had methods which become own property of classes's prototype.
 
-"Class fields" is a syntax that allows to add any properties.
+"Class fields" is a syntax that allows to add any properties which will become own property of classes's instances.
 
 For instance, let's add `name` property to `class User`:
 
@@ -311,6 +311,9 @@ class User {
     alert(`Hello, ${this.name}!`);
   }
 }
+
+// `name = "John"` had not be executed before this point.
+alert(User);
 
 new User().sayHi(); // Hello, John!
 ```
